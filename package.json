@@ -1,0 +1,78 @@
+{
+  "name": "bayarcash-ts-sdk",
+  "version": "1.0.0",
+  "description": "TypeScript SDK for Bayarcash Payment Gateway API",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "npm run build:cjs && npm run build:esm && npm run build:types",
+    "build:cjs": "tsc --module commonjs --outDir dist",
+    "build:esm": "tsc --module esnext --outDir dist-esm && mv dist-esm/index.js dist/index.mjs && rm -rf dist-esm",
+    "build:types": "tsc --declaration --emitDeclarationOnly --outDir dist",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "bayarcash",
+    "payment",
+    "gateway",
+    "fpx",
+    "duitnow",
+    "malaysia",
+    "singapore",
+    "indonesia",
+    "typescript",
+    "sdk",
+    "payment-gateway",
+    "online-banking",
+    "direct-debit",
+    "qr-payment"
+  ],
+  "author": "Dr. Norani Zahmad",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/bayarcash-ts-sdk.git"
+  },
+  "homepage": "https://github.com/yourusername/bayarcash-ts-sdk#readme",
+  "bugs": {
+    "url": "https://github.com/yourusername/bayarcash-ts-sdk/issues"
+  },
+  "dependencies": {
+    "axios": "^1.12.2",
+    "crypto-js": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.7.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.0",
+    "@typescript-eslint/parser": "^8.46.0",
+    "eslint": "^9.37.0",
+    "jest": "^30.2.0",
+    "prettier": "^3.6.2",
+    "ts-jest": "^29.4.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ]
+}

@@ -1,0 +1,35 @@
+# Source files (we only publish dist/)
+src/
+tests/
+examples/
+
+# Config files
+tsconfig.json
+jest.config.js
+.eslintrc.json
+.prettierrc
+
+# Development files
+.git/
+.gitignore
+node_modules/
+coverage/
+*.log
+
+# Documentation (except README and LICENSE)
+MIGRATION_GUIDE.md
+PROJECT_SUMMARY.md
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Build artifacts (kept for publishing)
+# dist/ - DO NOT IGNORE, this is what we publish
+
+# Test files
+**/*.test.ts
+**/*.spec.ts
